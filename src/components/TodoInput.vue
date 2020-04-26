@@ -2,7 +2,7 @@
   <div class="inputBox shadow">
     <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo" />
     <span class="addContainer">
-      <i class="fas fa-plus"></i>
+      <i class="fas fa-plus"></i>ddd
     </span>
   </div>
 </template>
