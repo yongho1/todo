@@ -8,7 +8,7 @@
       <!--
       you can use custom content here to overwrite
       default content
-    -->
+      -->
       <h3 slot="header">
         경고!
         <i class="fas fa-times closeModalBtn" @click="showModal = false"></i>
@@ -21,28 +21,28 @@
 <script>
 import Modal from "./common/Modal.vue";
 export default {
-  data: function() {
+  data() {
     return {
       newTodoItem: "",
-      showModal: false,
+      showModal: false
     };
   },
   methods: {
-    addTodo: function() {
+    addTodo() {
       if (this.newTodoItem !== "") {
-        this.$emit("addTodoItem", this.newTodoItem);
+        this.$store.commit("addOneItem", this.newTodoItem);
         this.clearInput();
       } else {
         this.showModal = !this.showModal;
       }
     },
-    clearInput: function() {
+    clearInput() {
       this.newTodoItem = "";
-    },
+    }
   },
   components: {
-    Modal: Modal,
-  },
+    Modal
+  }
 };
 </script>
 
